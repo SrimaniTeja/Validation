@@ -108,8 +108,15 @@
         }
 
         function Register(event){
-            event.preventDefault(); // Prevents the form from submitting
+            event.preventDefault(); 
             if(validateUsername() && validatePassword() && validateEmail() && validatePhone()){
+                const username = document.getElementById("Username").value;
+                const email = document.getElementById("Email").value;
+                const mobile = document.getElementById("Number").value;
+                
+                localStorage.setItem("username", username);
+                localStorage.setItem("email", email);
+                localStorage.setItem("mobile", mobile);
                 alert("Hurray!! Registration Successful");
             } else {
                 alert("Registration failed. Please check the inputs.");
